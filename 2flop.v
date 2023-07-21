@@ -1,25 +1,22 @@
 module top (input clk1,rst1,clk2,rst2,in, output reg out);
-reg q1,q2,q3;
+reg A,B_syn,B_rec;
 
 always@(posedge clk1 or posedge rst1)
 begin
     if(rst1)
-    q1 <= 0;
+    A <= 0;
     else
-    q1 = in;
+    A <= in;
 end
 
 always@(posedge clk2 or posedge rst2)
 begin
-    if(rst2) begin
-        q2 <= 0;
-        q3 <= 0;
-        out <= 0;
-    end
+    if(rst2)
+        {B_syn,B_rec,out} <= 0;
     else begin
-        q2 <= q1;
-        q3 <= q2;
-        out <= q3;
+        B_syn <= A;
+        B_rec <= B_syn;
+        out <= B_rec;
     end
 end
 endmodule

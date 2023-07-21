@@ -1,0 +1,8 @@
+current_design "top"
+#define clock
+
+clock -name "top.clk2" -domain domain1 -period 10 -waveform 0 5
+clock -name "top.clk1" -domain domain2 -period 30 -waveform 0 15 
+
+reset -name "top.rst2" -value 1
+reset -name "top.rst1" -value 1

@@ -1,0 +1,8 @@
+current_design top
+
+# Clock Constraints
+clock -name "top.clk1" -period 10 -waveform {0 5}  -domain domain1
+clock -name "top.clk2" -period 20 -waveform {0 10}  -domain domain2
+
+set_case_analysis  -name sel -value 0
+set_case_analysis  -name sel -value 1

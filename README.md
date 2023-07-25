@@ -13,6 +13,6 @@
 
 # AC_glitch
 <img width="746" alt="image" src="https://github.com/k-nasim/constraints/assets/130048247/a0b297c7-f6a5-48da-b74d-49bc07bcbdeb">
-![image](https://github.com/k-nasim/constraints/assets/130048247/b1ecc313-206f-499d-86ce-ebe01f051831)
-![image](https://github.com/k-nasim/constraints/assets/130048247/044b3296-09f3-4401-9303-e114bf83e93a)
+![image](https://github.com/k-nasim/constraints/assets/130048247/2ef98b43-2cfe-4055-8e20-c329415af65b)
+
 

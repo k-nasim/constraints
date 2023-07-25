@@ -1,0 +1,7 @@
+current_design top
+
+clock -name "top.clk1" -period 10 -edge 0 5  -domain domain1
+clock -name "top.clk2" -period 20 -edge 0 10  -domain domain2
+
+reset -name "rst1" -value 1
+reset -name "rst2" -value 1

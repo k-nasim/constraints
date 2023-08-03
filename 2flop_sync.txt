@@ -1,0 +1,65 @@
+module sync_2_flop_wo_synchronizer_in_main_module(input clk1,rst1,clk2,rst2, input data_in);
+reg q1;
+always@(posedge clk1 or posedge rst1)
+begin
+if(rst1)
+q1<=0;
+else
+q1<=data_in;
+end
+
+sync_2_flop ff1(.clk(clk2), .rst(rst2), .d2(q1), .q3(q3));
+
+//always@(posedge clk2 or posedge rst2)
+//begin
+//if(rst2)
+//data_out<=0;
+//else
+//data_out<=q3;
+//end
+
+endmodule
+
+
+
+module sync_2_flop(input clk,rst,d2, output reg q3);
+reg q2;
+always@(posedge clk or posedge rst)
+begin
+if(rst)
+begin
+q2<=0;
+q3<=0;
+end
+else
+begin
+q2<=d2;
+q3<=q2;
+end
+end
+endmodule
+
+
+
+module sync_2_flop_wo_synchronizer_in_main_module_tb();
+reg clk1,rst1,clk2,rst2;
+reg data_in;
+
+sync_2_flop_wo_synchronizer_in_main_module dut(clk1,rst1,clk2,rst2,data_in);
+
+initial begin
+clk1=1'b1;
+forever #5 clk1=~clk1;
+end
+
+initial begin
+clk2=1'b1;
+forever #10 clk2=~clk2;
+end
+
+initial begin
+rst1=1; rst2=1; #20
+rst1=0; rst2=0; data_in=1'b1; #100
+data_in=1'b0; #200;
+end
+endmodule
